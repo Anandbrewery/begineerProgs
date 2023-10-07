@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Amazon shipping calculator</title>
+            <style>
+                body{
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                .cost{
+                    font-size: 15px;
+                    /* padding-top: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 10px; */
+                    padding: 10px;
+                }
+                button{
+                    border: none;
+                    background-color: green;
+                    color:white;
+                    font-size: 15px;
+                    padding:12px 15px; /*vertical horizontal*/
+                    cursor:pointer;
+                }
+            </style>
+    </head>
+    <body>
+        <p>Amazon Shipping Calculator</p>
+        <p></p>
+        <p>Orders under $40 +$10 shipping.</p>
+        <p></p>
+        <p>Orders over $40 FREE shipping.</p>
+        <p></p>
+        <input placeholder="Cost of order" class="cost" onkeydown="handleCostkeydown(event)">     <button onclick="calculateTotal()">Calculate</button>
+        <p class="totalcost"></p>
+    <script>
+        console.log('25'-5);  //type coercion
+        console.log('25'+5);
+        function handleCostkeydown(event)
+        {
+            if(event.key==='Enter')
+            {
+                calculateTotal();
+            }
+        }
+        function calculateTotal(){
+            const inputElement = document.querySelector('.cost');
+            let cost=Number(inputElement.value);
+            console.log(cost);
+            if(cost<40 && inputElement.value!=='')
+            {
+                cost+=10;
+                cost="$"+cost;
+            }
+            else if(inputElement.value==''){
+                cost='Enter the Value'
+            }
+            else
+            {
+                cost="$"+cost;
+            }
+            document.querySelector(".totalcost").innerHTML=`${cost}`;
+        }
+    </script>
+    </body>
+</html>

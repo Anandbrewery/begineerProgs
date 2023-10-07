@@ -1,0 +1,10 @@
+pip install #pkg _name
+pip search #pkg _name
+pip list #list all installed pkg
+pip uninstall # unistall the pkg
+pip list -o #for latest version of any un updated pkg
+==How to install the requirements for another user
+pip freeze > requirements.txt #local machine
+pip install -r requirements.txt #installing in clients machine
+pip list outdated #lists all outdated pkg
+

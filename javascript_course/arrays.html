@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays</title>
+    </head>
+    <style>
+        .inputs{
+          
+            padding:1.2px;
+        }
+    </style>
+    <body>
+        <p>Todo List Practice 1</p>
+        <input  placeholder="Todo name" class="inputs" > <button onclick="todo()">Add</button>    
+        <p class="todoList"></p>
+        <script>
+           
+            todoArray=[];
+            function todo(){
+                const inputElement=document.querySelector("input");
+                let todoList=document.querySelector("todoList");
+                task=inputElement.value;
+                todoArray.push(task);
+                console.log(todoArray);
+            }
+        </script>
+    </body>
+</html>
